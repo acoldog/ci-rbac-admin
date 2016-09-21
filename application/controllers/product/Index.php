@@ -24,11 +24,13 @@ class Index extends CI_Controller {
 	}
 
 	public function testAdd($id=0) {
+		//图片上传表单项特殊处理
 		if(isset($_POST['images']) && $_POST['images'] && is_array($_POST['images'])) {
 			$_POST['ico'] = $_POST['images'][0];
 		}
 		unset($_POST['images']);
 
+		//富文本表单项特殊处理
 		if(isset($_POST['editorValue']) && !empty($_POST['editorValue'])) {
 			$_POST['descr'] = $_POST['editorValue'];
 		}
