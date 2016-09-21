@@ -1,0 +1,116 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+  font-size:13px;
+}
+footer {
+  text-align:center;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+.container {
+  width: 97%;
+}
+
+/*hover image enlarge*/
+.modal-dialog {
+  width: 70%;
+}
+.modal-body {
+  overflow: scroll;
+  text-align: center;
+  height: 650px;
+  overflow-y:scroll;
+  line-height: 500px;
+}
+.modal-body img {
+  max-height: 800px;
+}
+.modal {
+  bottom: auto;
+}
+
+.carousel-control.right {
+    left: auto;
+    right: 15px;
+}
+
+.carousel-control {
+  position: fixed;
+    top: 320px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top: -20px;
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 50px;
+    color: #ffffff;
+    text-align: center;
+    background: #222222;
+    border: 3px solid #ffffff;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 40px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+/**
+ * memu
+ */
+.selected {
+  background-color: #ffc;
+}
+.container-fluid {
+  padding: 0px;
+}
+.accordion-inner {
+  margin-top: 1px;
+}
+.accordion-group {
+  margin-bottom: 10px;
+}
