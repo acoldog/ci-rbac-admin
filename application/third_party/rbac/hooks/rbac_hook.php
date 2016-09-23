@@ -29,7 +29,8 @@ class Rbac {
 		//方法
 		$function = $this->ci_obj->router->fetch_method();
 		//UURI(MD5)
-		$this->ci_obj->uuri = md5($directory.$controller.$function);
+		// $this->ci_obj->uuri = md5($directory.$controller.$function);
+		$this->ci_obj->uuri = md5($directory.$controller);
 		if($directory!=""){//当非主目录
 			if($this->ci_obj->config->item('rbac_auth_on')){//开启认证
 				if(!in_array($directory,$this->ci_obj->config->item('rbac_notauth_dirc'))){//不需要验证的目录
@@ -123,7 +124,8 @@ class Rbac {
 		//按权限进行展示
 		foreach($Tmp_menu as $vo){
 			foreach($vo as $cvo){
-				$menu['list'][md5($cvo->dirc.$cvo->cont.$cvo->func)] = $cvo->title;
+				// $menu['list'][md5($cvo->dirc.$cvo->cont.$cvo->func)] = $cvo->title;
+				$menu['list'][md5($cvo->dirc.$cvo->cont)] = $cvo->title;
 				if($is_admin || rbac_conf(array('ACL',$cvo->dirc,$cvo->cont,$cvo->func)) || !$cvo->node_id){
 					if($j==0){
 						if($is_admin || rbac_conf(array('ACL',$cvo->dirc,$cvo->cont,$cvo->func))){
